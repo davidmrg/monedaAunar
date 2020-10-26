@@ -1,9 +1,6 @@
 {
   "name": "auth0-express-webapp-sample",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "scripts": {},
   "dependencies": {
     "debug": "~2.6.9",
     "dotenv": "^6.1.0",
