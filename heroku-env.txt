@@ -1,0 +1,4 @@
+ISSUER_BASE_URL=https://dev-22tukm-8.us.auth0.com
+CLIENT_ID=LDJ7VL1OiVA5XBjsqLr2nhYsXxSdA471
+BASE_URL=https://moneda-aunar-test.herokuapp.com
+SECRET=E3-Mw0FehD3VshiONqNR3cVRMCJHdbg6XkkPh8iZHlsypPsnm7zAmi7UAspwG6IN
