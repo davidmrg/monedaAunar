@@ -1,46 +1,33 @@
 var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
+const dataQuery = require('../db/conectionDB');
 
 
-// connection base de datos:
 
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: false
+router.get('/', function(req, res, next) {
+    const datas = dataQuery.resultQuery(`SELECT * from estudiante where nombre='${nombre2}' ;`).then((data) => {
+        console.log(data);
+        res.render('index', {
+            title: 'Moneda Aunar',
+            data: JSON.stringify(data, null, 2),
+            isAuthenticated: req.oidc.isAuthenticated()
+        });
+    }).catch((err) => console.log(err));
+});
+
+router.get('/profile', requiresAuth(), function(req, res, next) {
+    console.log(req.oidc.user);
+    const dataQ = dataQuery.resultQuery('SELECT * from estudiante').then((data) => {
+            res.render('profile', {
+                userProfile: JSON.stringify(req.oidc.user, null, 2),
+                title: 'Perfil',
+                data: data
+            });
+        })
+        .catch((err) => console.log(err));
 });
 
 
-router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Moneda Aunar',
-    isAuthenticated: req.oidc.isAuthenticated()
-  });
-});
-
-router.get('/profile', requiresAuth(), function (req, res, next) {
-  res.render('profile', {
-    userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Perfil'
-  });
-});
-
-
-// callback de bdd:
-
-router.get('/db', async (req, res) => {
-  try{
-    const client = await pool.connect()
-    const result = await client.query('SELECT * FROM test_table');
-    const results = {'results': (result) ? result.rows : null};
-    // res.render('pages/db',results);
-    res.send(JSON.stringify(results));
-    client.release();
-  }catch(err){
-    console.error(err);
-    res.send('Error: ' + err);
-  }
-});
 
 
 module.exports = router;
