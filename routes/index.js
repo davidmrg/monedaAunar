@@ -3,7 +3,7 @@ const { requiresAuth } = require('express-openid-connect');
 const dataQuery = require('../db/conectionDB');
 
 
-
+nombre2 = "samuel"
 router.get('/', function(req, res, next) {
     const datas = dataQuery.resultQuery(`SELECT * from estudiante where nombre='${nombre2}' ;`).then((data) => {
         console.log(data);
