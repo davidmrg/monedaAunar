@@ -34,7 +34,7 @@ router.get('/profile', requiresAuth(), function(req, res, next) {
             // console.log('nombre: ');
             // console.log(datos2[0].nombre);
 
-            res.render('index', {
+            res.render('profile', {
                 userProfile: JSON.stringify(req.oidc.user, null, 2),
                 title: 'Perfil',
                 nombre: datos2[0].nombre,
