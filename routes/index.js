@@ -5,10 +5,12 @@ const dataQuery = require('../db/conectionDB');
 
 router.get('/', function(req, res, next) {
     const datas = dataQuery.resultQuery(`SELECT * from actividad  ;`).then((data) => {
-        console.log(data);
+       /*for(var i=0; i<9;i++){
+        console.log(data[i])
+       };*/
         res.render('index', {
             title: 'Moneda Aunar',
-            data: JSON.stringify(data, null, 2),
+            data: data,
             isAuthenticated: req.oidc.isAuthenticated()
         });
     }).catch((err) => console.log(err));
