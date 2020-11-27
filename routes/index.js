@@ -52,7 +52,7 @@ router.get('/profile', requiresAuth(), function(req, res, next) {
                 numIdentidad: datos2[0].numidentidad,
                 carrera: datos2[0].carrera,
                 puntos_Acum: datos2[0].puntos_acum,
-                actividad: datos2[1].desc_actividad,
+                actividad: datos2[0].desc_actividad,
                 fecha: datos2[0].fecha_participacion,
                 puntosActividad: datos2[0].puntos_actividad
             });
