@@ -48,8 +48,13 @@ router.get('/profile', requiresAuth(), function(req, res, next) {
         .catch((err) => console.log(err));
 });
 
-router.get('/admin', (req, res) => {
+router.get('/registro', (req, res) => {
+    res.render('admin/registro',);
+  });
+
+  router.get('/registro2', (req, res) => {
     res.render('admin/prueba',);
   });
+
 
 module.exports = router;
