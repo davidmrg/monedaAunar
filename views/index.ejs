@@ -1,8 +1,7 @@
 <%- include('partials/header') -%>
 
-    <div class="container mt-4 align-items-center justify-content-center">
+<div class="container mt-4 align-items-center justify-content-center">
 
-<<<<<<< HEAD
     <h1 class="display-5" style="color: #1d2d51;">Moneda AUNAR - Modulo Administrativo</h1>
     <h3 class="display-5" style="color: #1d2d51;">Las siguientes son las actividades programadas:</h3>
 
@@ -20,49 +19,11 @@
                     <a href="/registro" class="card-link"><i class="fa fa-plus" aria-hidden="true"></i> Registrarme</a>
                     </div>
                 </div>
-=======
-        <h1 class="display-5" style="color: #1d2d51;">¡Bienvenidos a Moneda AUNAR!</h1>
-        <h3 class="display-5" style="color: #1d2d51;">Las siguientes son las actividades programadas en Bienestar Institucional:</h3>
-
-        <div class="jumbotron jumbotron-fluid">
-            <div class="row justify-content-md-center activities">
-                <% for(let i=0; i< data.length;i++){ %>
-                    <div class="col-auto mb-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5><span class="badge badge-success points"><%= data[i].puntos_actividad%></span></h5>
-                                <h5 class="card-title" style="color: #1d2d51; font-weight: bolder;">
-                                    <%= data[i].desc_actividad%>
-                                </h5>
-                                <span class="text-secondary"><%= data[i].fecha_Actividad %></span>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non magnam eum debitis voluptatum deleniti cum? Tempora corrupti laborum
-                                    cum necessitatibus enim quod? Pariatur expedita laboriosam a quidem natus repellendus reiciendis.</p>
-                                <a href="/registro" class="card-link"><i class="fa fa-plus" aria-hidden="true"></i> Registrarse</a>
-                            </div>
-                        </div>
-                    </div>
-                    <% } %>
->>>>>>> cea148e65e3aa8cc02e943c530e2b9576bb3937f
             </div>
+        </div>
+<% } %>
+</div>
 
-<<<<<<< HEAD
 
-=======
-            <nav aria-label="...">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" tabinde x="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
->>>>>>> cea148e65e3aa8cc02e943c530e2b9576bb3937f
 
-            <%- include('partials/footer') -%>
+<%- include('partials/footer') -%>
