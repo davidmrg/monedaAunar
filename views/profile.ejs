@@ -82,24 +82,29 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>
-                    <%= actividad %>
-                </td>
-                <td>
-                    <%= puntosActividad %>
-                </td>
-                <td>
-                    <%= fecha %>
-                </td>
-                <td>
-                    <%= puntosActividad %>
-                </td>
-            </tr>
-            <tr>
-                <th colspan="5">%</th>
-            </tr>
+            <% for(let i=0; i< (Object.keys(actividad).length / 2);i++){ %>
+                <tr>
+                    <th scope="row">
+                        <%= i %>
+                    </th>
+                    <td>
+                        <%= actividad[`Actividad${i}`] %>
+
+                    </td>
+                    <td>
+                        <%= actividad[`Puntos${i}`] %>
+                    </td>
+                    <td>
+                        <%= fecha %>
+                    </td>
+                    <td>
+                        <%= actividad[`Puntos${i}`] %>
+                    </td>
+                </tr>
+                <% } %>
+                    <tr>
+                        <th colspan="5">%</th>
+                    </tr>
         </tbody>
     </table>
 

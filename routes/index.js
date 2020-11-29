@@ -5,9 +5,9 @@ const dataQuery = require('../db/conectionDB');
 
 router.get('/', function(req, res, next) {
     const datas = dataQuery.resultQuery(`SELECT * from actividad  ;`).then((data) => {
-       /*for(var i=0; i<9;i++){
-        console.log(data[i])
-       };*/
+        /*for(var i=0; i<9;i++){
+         console.log(data[i])
+        };*/
         res.render('index', {
             title: 'Moneda Aunar',
             data: data,
@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/profile', requiresAuth(), function(req, res, next) {
-    const elementActividades = {}
+    let elementActividades = {}
         // capturar email del Auth0 para usarlo en el query
     console.log(req.oidc.user.email);
     const mail = req.oidc.user.email;
@@ -37,7 +37,10 @@ router.get('/profile', requiresAuth(), function(req, res, next) {
 
                 }
             }
-            console.log('const', elementActividades);
+            elementActividades = (Object.keys(elementActividades).length / 2) != 0 ? elementActividades : "No Registra actividades";
+
+
+
 
             // console.log('los datos son');
             // console.log(datos2);
@@ -52,21 +55,20 @@ router.get('/profile', requiresAuth(), function(req, res, next) {
                 numIdentidad: datos2[0].numidentidad,
                 carrera: datos2[0].carrera,
                 puntos_Acum: datos2[0].puntos_acum,
-                actividad: datos2[0].desc_actividad,
+                actividad: elementActividades,
                 fecha: datos2[0].fecha_participacion,
-                puntosActividad: datos2[0].puntos_actividad
             });
         })
         .catch((err) => console.log(err));
 });
 
 router.get('/registro', (req, res) => {
-    res.render('admin/registro',);
-  });
+    res.render('admin/registro', );
+});
 
-  router.get('/registro2', (req, res) => {
-    res.render('admin/prueba',);
-  });
+router.get('/registro2', (req, res) => {
+    res.render('admin/prueba', );
+});
 
 
 module.exports = router;
