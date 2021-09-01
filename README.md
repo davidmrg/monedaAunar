@@ -1,44 +1,21 @@
-# Express OpenID Connect sample
+# Proyecto Moneda Aunar - Portal Estudiantes
 
-See a detailed walk-through of this app on the [Express Quickstart](https://auth0.com/docs/quickstart/webapp/express).
+### Requisitos para descargar el proyecto (clonar) y usar:
+- Tener instalado git (www.git-scm.com)
+- Tener instalado node (https://nodejs.org/en/)
 
-## Running the Sample
+### Pasos para clonar:
+1. Entrar a algún directorio de tu Sistema Operativo en una ventana terminal (CMD en Windows)
+2. ejecutar el comando:```git clone https://github.com/davidmrg/monedaAunar```
 
-If you don't yet have an Auth0 account, [sign up](https://auth0.com/signup) for free.
-
-Install the dependencies with npm:
-
-```bash
-npm install
-```
-
-Rename `.env.example` to `.env` and replace the following values:
-* `CLIENT_ID` - your Auth0 application client id
-* `ISSUER_BASE_URL` - absolute URL to your Auth0 application domain (ie: `https://accountName.auth0.com`)
-* `APP_SESSION_SECRET` - a randomly rengerated string.  You can generate one on the command line with the following `openssl rand -hex 32`
+### Pasos para ejecutar:
+1. Ingresar al directorio en dónde quedó el proyecto clonado (vía consola terminal / CMD)
+2. Ejecutar comando```npm install``` para descargar e instalar dependencias
+3. Ejecutar comando```node server.js``` para ejecutar proyecto (Si usas nodemon:```nodemon server.js```)
+3. Abrir en un navegador: http://localhost:3000
 
 
-```bash
-mv .env-sample .env
-```
-
-Run the app:
-
-```bash
-npm start
-```
-
-The app will be served at `localhost:3000`.
-
-## Support + Feedback
-
-Please use the [Issues queue](https://github.com/auth0-samples/auth0-express-webapp-sample/issues) in this repo for questions and feedback.
-
-## Vulnerability Reporting
-
-Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
-
-## What is Auth0?
+## Acerca de Auth0 (Herramienta para autenticación)
 
 Auth0 helps you to easily:
 
